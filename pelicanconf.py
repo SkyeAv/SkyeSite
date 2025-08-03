@@ -1,3 +1,5 @@
+from typing import Union
+
 AUTHOR: str = "Skye Lane Goetz"
 SITENAME: str = "Skye Lane Goetz - Data Scientist & Bio-Cheminformatician"
 SITEURL: str = ""
@@ -16,7 +18,7 @@ AUTHOR_FEED_ATOM: None = None
 AUTHOR_FEED_RSS: None = None
 
 # Blogroll
-LINKS: tuple[tuple[str, str]]= (
+LINKS: tuple[tuple[str, str]] = (
     ("Pelican", "https://getpelican.com/"),
     ("Python.org", "https://www.python.org/"),
     ("Jinja2", "https://palletsprojects.com/p/jinja/"),
@@ -35,11 +37,16 @@ DEFAULT_PAGINATION: int = 10
 # RELATIVE_URLS = True
 
 PLUGINS: list[str] = [
-    "granular_signals"
-    "precompress",
+    "granular_signals" "precompress",
     "search",
     "seo",
     "share_post",
     "sitemap",
-    "webassets"
+    "webassets",
+    "yaml_metadata",
 ]
+
+MARKDOWN: dict[str, Union[str, dict[str, dict[str, str]]]] = {
+    "extension_configs": {"markdown.extensions.meta": {}},
+    "output_format": "html5",
+}

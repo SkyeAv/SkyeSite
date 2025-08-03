@@ -18,3 +18,4 @@ dependencies:
     - pelican-webassets
     - pelican-search
     - pelican-precompress
+    - pelican-yaml-metadata
